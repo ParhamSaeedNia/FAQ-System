@@ -39,14 +39,12 @@ CREATE TABLE Users (
   username VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   status VARCHAR(50) NOT NULL, -- You might have different statuses like 'registered', 'active', etc.
-  PRIMARY KEY (userId)
 );
 
 -- Groups table
-CREATE TABLE Groups (
+CREATE TABLE `Groups` (
   groupId INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  PRIMARY KEY (groupId)
 );
 
 -- UserGroups table (to represent the many-to-many relationship between Users and Groups)
@@ -55,5 +53,5 @@ CREATE TABLE UserGroups (
   groupId INT,
   PRIMARY KEY (userId, groupId),
   FOREIGN KEY (userId) REFERENCES Users(userId),
-  FOREIGN KEY (groupId) REFERENCES Groups(groupId)
+  FOREIGN KEY (groupId) REFERENCES `Groups`(groupId)
 );
