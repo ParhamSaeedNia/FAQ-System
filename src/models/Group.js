@@ -1,9 +1,9 @@
 const mysql = require("mysql2/promise");
 const {
-  DATABASE_HOST,
-  DATABASE_USER,
-  DATABASE_PASSWORD,
-  DATABASE_NAME,
+  host,
+  user,
+  password,
+  database,
 } = require("../../config/database.config");
 
 class GroupModel {
